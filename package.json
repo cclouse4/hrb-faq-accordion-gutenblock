@@ -1,8 +1,8 @@
 {
 	"name": "hrb-faq-accordion",
 	"version": "0.1.0",
-	"description": "Example static block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"description": "FAQ Accordion Block for HRB Block Advisors.",
+	"author": "Cassie Clouse (Chemistry)",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

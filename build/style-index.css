@@ -7,10 +7,93 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-hrb-faq-accordion {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+@font-face {
+  font-family: "Graphik Web";
+  src: url(fonts/Graphik-Regular-Web.190d435b.woff2) format("woff2"), url(fonts/Graphik-Regular-Web.00f90d90.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik Web Medium";
+  src: url(fonts/Graphik-Medium.d6bb2eb4.woff2) format("woff2"), url(fonts/Graphik-Medium.5065017b.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik Web Bold";
+  src: url(fonts/Graphik-Bold-Web.f7a2a52d.woff2) format("woff2"), url(fonts/Graphik-Bold-Web.3ce00304.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Graphik Web Semibold";
+  src: url(fonts/Graphik-Semibold.fb8a32f1.woff2) format("woff2"), url(fonts/Graphik-Semibold.b1267334.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+.wp-block-create-block-accordion-block .accordion h1, .wp-block-create-block-accordion-block .accordion h2, .wp-block-create-block-accordion-block .accordion h3, .wp-block-create-block-accordion-block .accordion h4, .wp-block-create-block-accordion-block .accordion h5, .wp-block-create-block-accordion-block .accordion h6, .wp-block-create-block-accordion-block .accordion p {
+  margin: 0;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item {
+  border-top: 1px solid #9fa4aa;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--a {
+  padding: 35px 50px 35px 0;
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--a:after {
+  content: "";
+  position: absolute;
+  right: 50px;
+  top: 21px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 role=%27image%27 aria-label=%27faq list%27 focusable=%27false%27 data-di-res-id=%27277261a-51b4d792%27 data-di-rand=%271656615392050%27%3E%3Cg%3E%3Cpath class=%27icon-fill-spruce%27 d=%27M7.3 9.3C7.7 8.9 8.2 8.9 8.6 9.2L8.7 9.3 12 12.6 15.3 9.3C15.7 8.9 16.2 8.9 16.6 9.2L16.7 9.3C17.1 9.7 17.1 10.2 16.8 10.6L16.7 10.7 12.7 14.7C12.3 15.1 11.8 15.1 11.4 14.8L11.3 14.7 7.3 10.7C6.9 10.3 6.9 9.7 7.3 9.3Z%27%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: rotate(0deg);
+  transition: transform ease-in 300ms;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item:hover .accordion-item--a:after, .wp-block-create-block-accordion-block .accordion .accordion-item:focus .accordion-item--a:after {
+  background-color: #d6dae0;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--question color:blue h1,
+.wp-block-create-block-accordion-block .accordion .accordion-item--question h2, .wp-block-create-block-accordion-block .accordion .accordion-item--question h3, .wp-block-create-block-accordion-block .accordion .accordion-item--question h4, .wp-block-create-block-accordion-block .accordion .accordion-item--question h5, .wp-block-create-block-accordion-block .accordion .accordion-item--question h6, .wp-block-create-block-accordion-block .accordion .accordion-item--question p {
+  font-family: "Graphik Web", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #262626;
+  margin: 0;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--answer {
+  display: none;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--answer p {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item--answer a:after {
+  content: "";
+  background-image: none;
+}
+.wp-block-create-block-accordion-block .accordion .accordion-item.open a:after {
+  transform: rotate(-180deg);
 }
 
 /*# sourceMappingURL=style-index.css.map*/
