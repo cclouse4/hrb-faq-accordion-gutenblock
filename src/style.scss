@@ -1,0 +1,129 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ @font-face {
+  font-family: 'Graphik Web';
+  src: url('../font/Graphik-Regular-Web.woff2') format('woff2'),
+       url('../font/Graphik-Regular-Web.woff') format('woff');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Web Medium';
+  src: url('../font/Graphik-Medium.woff2') format('woff2'),
+       url('../font/Graphik-Medium.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Web Bold';
+  src: url('../font/Graphik-Bold-Web.woff2') format('woff2'),
+       url('../font/Graphik-Bold-Web.woff') format('woff');
+  font-weight:  700;
+  font-style:   normal;
+  font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Web Semibold';
+  src: url('../font/Graphik-Semibold.woff2') format('woff2'),
+     url('../font/Graphik-Semibold.woff') format('woff');
+  font-weight:  600;
+  font-style:   normal;
+  font-stretch: normal;
+	font-display: swap;
+}
+
+.wp-block-create-block-accordion-block {
+	.accordion {
+		h1, h2, h3, h4, h5, h6, p {
+			margin:0;
+		}
+
+		.accordion-item {
+			border-top:1px solid #9fa4aa;
+		
+			&--a {
+				padding: 35px 50px 35px 0;
+				display: block;
+				width:100%;
+				color:inherit;
+				text-decoration: none;
+				position: relative;
+				
+				&:after {
+					content:'';
+					position: absolute;
+					right:50px;
+					top:21px;
+					width: 30px;
+					height:30px;
+					background-color:transparent;
+					border-radius:100px;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' role='image' aria-label='faq list' focusable='false' data-di-res-id='277261a-51b4d792' data-di-rand='1656615392050'%3E%3Cg%3E%3Cpath class='icon-fill-spruce' d='M7.3 9.3C7.7 8.9 8.2 8.9 8.6 9.2L8.7 9.3 12 12.6 15.3 9.3C15.7 8.9 16.2 8.9 16.6 9.2L16.7 9.3C17.1 9.7 17.1 10.2 16.8 10.6L16.7 10.7 12.7 14.7C12.3 15.1 11.8 15.1 11.4 14.8L11.3 14.7 7.3 10.7C6.9 10.3 6.9 9.7 7.3 9.3Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+					background-position: center center;
+					background-repeat: no-repeat;
+					transform: rotate(0deg);
+					transition: transform ease-in 300ms;
+				}
+			}
+				
+			&:hover, &:focus {
+				.accordion-item--a {
+					&:after {
+						background-color:#d6dae0;
+					}
+				}
+			}
+				
+			&--question {
+				color:blue
+					
+				h1, h2, h3, h4, h5, h6, p {
+					font-family: 'Graphik Web', "Helvetica Neue", Helvetica, sans-serif;
+					font-weight: 400;
+					font-size: 24px;
+					color: #262626;
+					margin:0;
+				}
+			}
+				
+			&--answer {
+				display: none;
+				
+				p {
+					margin-top:0px;
+					margin-left:0px;
+					margin-right:0px;
+					padding: 0;
+				}
+		
+				a {
+					&:after {
+						content:'';
+						background-image: none;
+					}
+				}
+			}
+				
+			&.open {
+				a {
+					&:after {
+						transform: rotate(-180deg);
+					}
+				}
+			}
+		}
+	}
+}
