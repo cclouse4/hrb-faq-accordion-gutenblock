@@ -39,27 +39,29 @@
 }
 
 .wp-block-create-block-hrb-faq-accordion {
+	&:first-of-type {
+		margin-top: 80px;
+	}
+
 	.accordion {
-		h1, h2, h3, h4, h5, h6, p {
-			margin:0;
-		}
 
 		.accordion-item {
 			border-top:1px solid #9fa4aa;
 		
 			&--a {
-				padding: 35px 50px 35px 0;
+				padding: 35px 0;
 				display: block;
 				width:100%;
 				color:inherit;
 				text-decoration: none;
 				position: relative;
+				transition: all ease 300ms;
 				
 				&:after {
 					content:'';
 					position: absolute;
-					right:50px;
-					top:21px;
+					right:10px;
+					top:calc((100% - 30px) / 2);
 					width: 30px;
 					height:30px;
 					background-color:transparent;
@@ -68,37 +70,37 @@
 					background-position: center center;
 					background-repeat: no-repeat;
 					transform: rotate(0deg);
-					transition: transform ease-in 300ms;
+					transition: all ease 300ms;
 				}
 			}
 				
-			&:hover, &:focus {
-				.accordion-item--a {
-					&:after {
-						background-color:#d6dae0;
-					}
-				}
-			}
+			
 				
 			&--question {
-				color:blue
+				
 					
 				h1, h2, h3, h4, h5, h6, p {
 					font-family: 'Graphik Web', "Helvetica Neue", Helvetica, sans-serif;
-					font-weight: 400;
+					font-weight: 500;
 					font-size: 24px;
+					line-height: 1.25;
 					color: #262626;
 					margin:0;
+					padding: 0 60px 0 0;
+					transition: all ease 300ms;
+
+					@media all and (max-width: 767.98px) {
+						font-size: 20px;
+					}
 				}
 			}
 				
 			&--answer {
 				display: none;
+				padding: 0 40px 40px 0;
 				
-				p {
-					margin-top:0px;
-					margin-left:0px;
-					margin-right:0px;
+				h1, h2, h3, h4, h5, h6, p {
+					margin:0;
 					padding: 0;
 				}
 		
@@ -114,6 +116,20 @@
 				a {
 					&:after {
 						transform: rotate(-180deg);
+					}
+				}
+			}
+			
+			&:hover, &:focus {
+				.accordion-item--a {
+					&:after {
+						background-color:#d6dae0;
+					}
+				}
+
+				.accordion-item--question {
+					h1, h2, h3, h4, h5, h6, p {
+						color: #19532e;
 					}
 				}
 			}
