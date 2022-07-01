@@ -39,13 +39,13 @@
   font-stretch: normal;
   font-display: swap;
 }
-.wp-block-create-block-accordion-block .accordion h1, .wp-block-create-block-accordion-block .accordion h2, .wp-block-create-block-accordion-block .accordion h3, .wp-block-create-block-accordion-block .accordion h4, .wp-block-create-block-accordion-block .accordion h5, .wp-block-create-block-accordion-block .accordion h6, .wp-block-create-block-accordion-block .accordion p {
+.wp-block-create-block-hrb-faq-accordion .accordion h1, .wp-block-create-block-hrb-faq-accordion .accordion h2, .wp-block-create-block-hrb-faq-accordion .accordion h3, .wp-block-create-block-hrb-faq-accordion .accordion h4, .wp-block-create-block-hrb-faq-accordion .accordion h5, .wp-block-create-block-hrb-faq-accordion .accordion h6, .wp-block-create-block-hrb-faq-accordion .accordion p {
   margin: 0;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item {
   border-top: 1px solid #9fa4aa;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--a {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--a {
   padding: 35px 50px 35px 0;
   display: block;
   width: 100%;
@@ -53,7 +53,7 @@
   text-decoration: none;
   position: relative;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--a:after {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--a:after {
   content: "";
   position: absolute;
   right: 50px;
@@ -68,31 +68,31 @@
   transform: rotate(0deg);
   transition: transform ease-in 300ms;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item:hover .accordion-item--a:after, .wp-block-create-block-accordion-block .accordion .accordion-item:focus .accordion-item--a:after {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item:hover .accordion-item--a:after, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item:focus .accordion-item--a:after {
   background-color: #d6dae0;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--question color:blue h1,
-.wp-block-create-block-accordion-block .accordion .accordion-item--question h2, .wp-block-create-block-accordion-block .accordion .accordion-item--question h3, .wp-block-create-block-accordion-block .accordion .accordion-item--question h4, .wp-block-create-block-accordion-block .accordion .accordion-item--question h5, .wp-block-create-block-accordion-block .accordion .accordion-item--question h6, .wp-block-create-block-accordion-block .accordion .accordion-item--question p {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question color:blue h1,
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question h2, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question h3, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question h4, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question h5, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question h6, .wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--question p {
   font-family: "Graphik Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 24px;
   color: #262626;
   margin: 0;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--answer {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--answer {
   display: none;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--answer p {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--answer p {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 0;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item--answer a:after {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item--answer a:after {
   content: "";
   background-image: none;
 }
-.wp-block-create-block-accordion-block .accordion .accordion-item.open a:after {
+.wp-block-create-block-hrb-faq-accordion .accordion .accordion-item.open a:after {
   transform: rotate(-180deg);
 }
 

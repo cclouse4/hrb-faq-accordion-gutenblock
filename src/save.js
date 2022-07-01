@@ -6,19 +6,23 @@ export default function save({className, attributes}) {
 	const blockProps = useBlockProps.save();
 
 	return (
-		<div class="accordion wp-block-create-block-accordion-block wp-block" {...blockProps}>
+
+
+		<div class="accordion wp-block-create-block-hrb-faq-accordion wp-block">
   		<div class="accordion-item">
     		<a class="accordion-item--a" href="#">
       		<div class="accordion-item--question">
-						<RichText
+						<RichText.Content
+							{...blockProps}
 							tagName="h3"
 							value={attributes.questionContent}
 							className="question-content"
 						/>
-      		</div>
-    		</a>
+       		</div>
+     		</a>
 				<div class="accordion-item--answer">
-					<RichText
+					<RichText.Content
+						{...blockProps}
 						tagName="p"
 						value={attributes.answerContent}
 						className="answer-content"
@@ -26,5 +30,7 @@ export default function save({className, attributes}) {
 				</div>
   		</div>
 		</div>
+
+		
 	);
 }
