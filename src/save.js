@@ -8,27 +8,29 @@ export default function save({className, attributes}) {
 	return (
 
 
-		<div class="accordion wp-block-create-block-hrb-faq-accordion wp-block">
-  		<div class="accordion-item">
-    		<a class="accordion-item--a" href="#">
-      		<div class="accordion-item--question">
+		<div class="wp-block-create-block-hrb-faq-accordion wp-block">
+			<div class="accordion">
+				<div class="accordion-item">
+					<a class="accordion-item--a" href="#">
+						<div class="accordion-item--question">
+							<RichText.Content
+								{...blockProps}
+								tagName="h3"
+								value={attributes.questionContent}
+								className="question-content"
+							/>
+						</div>
+					</a>
+					<div class="accordion-item--answer">
 						<RichText.Content
 							{...blockProps}
-							tagName="h3"
-							value={attributes.questionContent}
-							className="question-content"
+							tagName="p"
+							value={attributes.answerContent}
+							className="answer-content"
 						/>
-       		</div>
-     		</a>
-				<div class="accordion-item--answer">
-					<RichText.Content
-						{...blockProps}
-						tagName="p"
-						value={attributes.answerContent}
-						className="answer-content"
-					/>
+					</div>
 				</div>
-  		</div>
+			</div>
 		</div>
 
 		

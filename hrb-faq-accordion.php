@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Hrb Faq Accordion
  * Description:       FAQ Accordion for HRB Block Advisors.
- * Requires at least: 5.9
+ * Requires at least: 5.7
  * Requires PHP:      7.0
  * Version:           0.1.0
  * Author:            Cassie Clouse (Chemistry)

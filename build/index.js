@@ -50,8 +50,10 @@ function Edit(_ref) {
   }
 
   return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    class: "accordion wp-block-create-block-hrb-faq-accordion wp-block"
+    class: "wp-block-create-block-hrb-faq-accordion wp-block"
   }, blockProps), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    class: "accordion"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", {
     class: "accordion-item--a",
@@ -72,7 +74,7 @@ function Edit(_ref) {
     onChange: onChangeAnswer,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Answer Content'),
     className: "answer-content"
-  }))))];
+  })))))];
 }
 
 /***/ }),
@@ -145,7 +147,9 @@ function save(_ref) {
   } = _ref;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "accordion wp-block-create-block-hrb-faq-accordion wp-block"
+    class: "wp-block-create-block-hrb-faq-accordion wp-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    class: "accordion"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", {
@@ -163,7 +167,7 @@ function save(_ref) {
     tagName: "p",
     value: attributes.answerContent,
     className: "answer-content"
-  })))));
+  }))))));
 }
 
 /***/ }),
