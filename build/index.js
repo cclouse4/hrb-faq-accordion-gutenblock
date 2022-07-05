@@ -19,7 +19,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+
 
 
 
@@ -34,7 +37,9 @@ function Edit(_ref) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)();
   const {
     questionContent,
-    answerContent
+    answerContent,
+    analyticsLOC,
+    analyticsNM
   } = attributes;
 
   function onChangeQuestion(newQuestion) {
@@ -49,15 +54,48 @@ function Edit(_ref) {
     });
   }
 
-  return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    class: "wp-block-create-block-hrb-faq-accordion wp-block"
+  function onChangeLoc(newLoc) {
+    setAttributes({
+      analyticsLOC: newLoc
+    });
+  }
+
+  function onChangeNM(newNm) {
+    setAttributes({
+      analyticsNM: newNm
+    });
+  }
+
+  return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Analytics'),
+    initialOpen: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('loc:'),
+    value: analyticsLOC,
+    onChange: onChangeLoc,
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add the value for loc')
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('nm:'),
+    value: analyticsNM,
+    onChange: onChangeNM,
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add the value for nm')
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    class: "wp-block-create-block-hrb-faq-accordion wp-block",
+    itemscope: true,
+    itemType: "https://schema.org/FAQpage"
   }, blockProps), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "accordion"
+    class: "accordion",
+    itemscope: true,
+    itemprop: "mainEntity",
+    itemtype: "https://schema.org/Question"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", {
     class: "accordion-item--a",
-    href: "#"
+    href: "#",
+    "aria-expanded": "false",
+    itemprop: "name",
+    "data-analytics": "{" + '"loc"' + ' : ' + '"' + attributes.analyticsLOC + '"' + ' , ' + '"nm"' + ' : ' + '"' + attributes.analyticsNM + '"' + "}"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item--question"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
@@ -67,14 +105,19 @@ function Edit(_ref) {
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Question Content'),
     className: "question-content"
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "accordion-item--answer"
+    class: "accordion-item--answer",
+    itemscope: true,
+    itemprop: "acceptedAnswer",
+    itemtype: "https://schema.org/Answer"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    itemprop: "text"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
     tagName: "p",
     value: attributes.answerContent,
     onChange: onChangeAnswer,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Answer Content'),
     className: "answer-content"
-  })))))];
+  }))))))];
 }
 
 /***/ }),
@@ -111,6 +154,14 @@ __webpack_require__.r(__webpack_exports__);
       type: 'string',
       source: 'html',
       selector: '.answer-content'
+    },
+    analyticsLOC: {
+      type: 'string',
+      default: ''
+    },
+    analyticsNM: {
+      type: 'string',
+      default: ''
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -147,14 +198,22 @@ function save(_ref) {
   } = _ref;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "wp-block-create-block-hrb-faq-accordion wp-block"
+    class: "wp-block-create-block-hrb-faq-accordion wp-block",
+    itemscope: true,
+    itemType: "https://schema.org/FAQpage"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "accordion"
+    class: "accordion",
+    itemscope: true,
+    itemprop: "mainEntity",
+    itemtype: "https://schema.org/Question"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", {
     class: "accordion-item--a",
-    href: "#"
+    href: "#",
+    "aria-expanded": "false",
+    itemprop: "name",
+    "data-analytics": "{" + '"loc"' + ' : ' + '"' + attributes.analyticsLOC + '"' + ' , ' + '"nm"' + ' : ' + '"' + attributes.analyticsNM + '"' + "}"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "accordion-item--question"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText.Content, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
@@ -162,12 +221,17 @@ function save(_ref) {
     value: attributes.questionContent,
     className: "question-content"
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
-    class: "accordion-item--answer"
+    class: "accordion-item--answer",
+    itemscope: true,
+    itemprop: "acceptedAnswer",
+    itemtype: "https://schema.org/Answer"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    itemprop: "text"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText.Content, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
     tagName: "p",
     value: attributes.answerContent,
     className: "answer-content"
-  }))))));
+  })))))));
 }
 
 /***/ }),
@@ -213,6 +277,16 @@ module.exports = window["wp"]["blockEditor"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
 
 /***/ }),
 

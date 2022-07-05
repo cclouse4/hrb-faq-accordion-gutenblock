@@ -18,6 +18,14 @@ registerBlockType( 'create-block/hrb-faq-accordion', {
 			type:		'string',
 			source: 'html',
 			selector:	'.answer-content'
+		},
+		analyticsLOC: {
+			type: 	'string',
+			default:	''
+		},
+		analyticsNM: {
+			type: 	'string',
+			default:	''
 		}
 	},
 
