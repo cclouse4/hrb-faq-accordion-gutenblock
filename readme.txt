@@ -1,4 +1,4 @@
-=== Hrb Faq Accordion ===
+=== HRB FAQ Accordion ===
 Contributors:      Cassie Clouse (Chemistry)
 Tags:              block
 Tested up to:      6.0
