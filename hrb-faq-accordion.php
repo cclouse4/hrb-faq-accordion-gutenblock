@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Hrb Faq Accordion
+ * Plugin Name:       HRB FAQ Accordion
  * Description:       FAQ Accordion for HRB Block Advisors.
  * Requires at least: 5.7
  * Requires PHP:      7.0

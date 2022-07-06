@@ -3,9 +3,9 @@
   "apiVersion": 2,
   "name": "create-block/hrb-faq-accordion",
   "version": "0.1.0",
-  "title": "Hrb Faq Accordion",
+  "title": "HRB FAQ Accordion",
   "category": "widgets",
-  "icon": "smiley",
+  "icon": "arrow-down-alt2",
   "description": "Example static block scaffolded with Create Block tool.",
   "supports": {
     "html": false
