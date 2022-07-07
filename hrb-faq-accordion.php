@@ -20,9 +20,19 @@ add_action( 'init', 'create_block_hrb_faq_accordion_block_init' );
 
 
 
+
+function load_jquery() {
+	if ( ! wp_script_is( 'jquery', 'enqueued' )) {
+		wp_enqueue_script( 'jquery', plugins_url( '/js/jquery-3.6.0.min.js', __FILE__ ));
+	}
+}
+add_action( 'wp_enqueue_scripts', 'load_jquery' );
+
+
+
+
 add_action('wp_enqueue_scripts','add_hrb_scripts');
 
 function add_hrb_scripts() {
-	wp_enqueue_script( 'hrb_faq_jquery', plugins_url( '/js/jquery-3.6.0.min.js', __FILE__ ));
-	wp_enqueue_script( 'hrb_faq_scripts', plugins_url( '/js/scripts.js', __FILE__ ), array('hrb_faq_jquery'));
+	wp_enqueue_script( 'hrb_faq_scripts', plugins_url( '/js/scripts.js', __FILE__ ), array('jquery'));
 }
