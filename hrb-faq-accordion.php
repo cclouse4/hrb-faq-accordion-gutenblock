@@ -20,7 +20,6 @@ add_action( 'init', 'create_block_hrb_faq_accordion_block_init' );
 
 
 
-
 function load_jquery() {
 	if ( ! wp_script_is( 'jquery', 'enqueued' )) {
 		wp_enqueue_script( 'jquery', plugins_url( '/js/jquery-3.6.0.min.js', __FILE__ ));
