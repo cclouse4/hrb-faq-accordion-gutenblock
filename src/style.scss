@@ -40,8 +40,14 @@
 
 .wp-block-create-block-hrb-faq-accordion {
 	margin-block-start: 0!important;
+	max-width: 790px;
+	margin-left: auto;
+	margin-right: auto;
 	&:first-of-type {
 		margin-top: 80px!important;
+	}
+	&:last-of-type {
+		margin-bottom: 80px!important;
 	}
 
 	.accordion {
